@@ -4,19 +4,156 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
-    
-    <style type="text/css">
-      body {
-        margin: 20px;
+    <title>Bypass</title>
+    <meta name="robots" CONTENT="noindex, nofollow">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔵</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    button {
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .hover-underline {
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .hover-underline:hover {
+      border-bottom: 2px solid #3B3B3B; 
+    }
+
+    .title {
+      color: #000000;
+      font-family: 'Luckiest Guy';
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 0;
+      display: inline;
+    }
+
+    .content {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      line-height: 1.5;
+      max-width: 750px;
+      padding: 20px;
+      text-align: left;
+      width: 100%;
+      margin: 10px;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar {
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      flex: 1;
+      font-size: 16px;
+      outline: none;
+      padding: 10px;
+    }
+
+    .search-button {
+      background-color: #007bff;
+      border: 1px solid #007bff;
+      border-radius: 0 4px 4px 0;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 0px;
+      outline: none;
+      padding: 10px 15px;
+    }
+
+    .search-button:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    footer {
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.8em;
+    }
+
+    #desktop-show {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .container, .content {
+        padding: 10px;
+        margin: 10px;
       }
+      #desktop-show {
+        display: none;
+      }
+    }
     </style>
   </head>
   <body>
-    <ol>
-      <li>Drag this link to your Bookmarks.<br><br><a href="javascript:(function()%7Bwindow.location.href%3D%27https://archive.ph/%27%2Bwindow.location.href%3B%7D)()%3B">Bypass</a><br><br></li>
-      <li>Click the bookmarklet on most paywalled articles to bypass.</li>
-    </ol>
+    <div class="container">
+      <div class="title">BYPASS</div>
+      <div class="content">
+        <b>Bypass</b> most paywalled articles.<br>
+        <div id="desktop-show">
+          Drag this <a href="javascript:(function()%7Bwindow.location.href%3D%27https://archive.ph/%27%2Bwindow.location.origin%2Bwindow.location.pathname%3B%7D)()%3B"><button>🟢 Bypass</button></a> bookmarklet to your browser bar and click to bypass most paywalled articles.
+        </div>
+      </div>
+
+      <form class="content search-container" onsubmit="event.preventDefault(); openArchivePage();">
+        <input type="text" class="search-bar" id="weblink" placeholder="Enter URL" title="Enter URL" required>
+        <button type="submit" class="search-button">Bypass</button>
+      </form>
+
+      <script>
+        function openArchivePage() {
+          const urlInput = document.getElementById('weblink').value;
+          try {
+            const parsedUrl = new URL(urlInput);
+            const archiveUrl = 'https://archive.ph/' + parsedUrl.origin + parsedUrl.pathname;
+            window.open(archiveUrl, '_blank');
+          } catch (e) {
+            alert('Please enter a valid URL.');
+          }
+        }
+      </script>
+    </div>
+    <footer>
+    <a href="https://github.com/skwk" target="_BLANK" class="hover-underline">SKWK</a>
+    </footer>
   </body>
 </html>
